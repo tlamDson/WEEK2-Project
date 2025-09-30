@@ -12,9 +12,7 @@ const App = () => {
         How good of a plant parent are you ? Test all of your planty knowledge
         here!
       </p>
-      <div>
-        Card {currentIndex} of {Data.length - 1}
-      </div>
+      <div>Card{Data.length - 1}</div>
       {Data[currentIndex] && (
         <Card
           src={Data[currentIndex].src}
@@ -38,11 +36,12 @@ const App = () => {
         </button>
         <button
           onClick={() => {
-            if (currentIndex < Data.length - 1) {
-              setCurrentIndex((prev) => prev + 1);
-            } else {
-              setCurrentIndex(1);
-            }
+            // Generate random index, excluding current index and start card (index 0)
+            let randomIndex;
+            do {
+              randomIndex = Math.floor(Math.random() * (Data.length - 1)) + 1; // Start from index 1 to exclude start card
+            } while (randomIndex === currentIndex && Data.length > 2);
+            setCurrentIndex(randomIndex);
           }}
         >
           {" "}
