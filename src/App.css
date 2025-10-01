@@ -46,10 +46,7 @@ h1 {
   text-align: center;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
   margin-bottom: 10px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+
 }
 
 p {
@@ -72,7 +69,30 @@ p {
   transition: all 0.5s ease-in-out;
 }
 
+.button button {
+  background-color: #87CEEB;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(135, 206, 235, 0.3);
+}
+
 .button button:hover {
   transform: translateY(-3px);
-  background: #87ceeb;
+  background-color: #7FB8D4;
+  box-shadow: 0 6px 20px rgba(135, 206, 235, 0.4);
+}
+
+.button button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(135, 206, 235, 0.3);
+}
+.card { 
+  color: white;
+  font-size: 1.2rem;
 }

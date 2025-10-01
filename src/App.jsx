@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ArrowLeft, ArrowRight, ArrowUp, ArrowDown } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import Card from "./components/Card";
 import "./App.css";
 import { Data } from "./data/data";
@@ -12,7 +12,7 @@ const App = () => {
         How good of a plant parent are you ? Test all of your planty knowledge
         here!
       </p>
-      <div>Card{Data.length - 1}</div>
+      <div className="card"> Cards {currentIndex} of {Data.length}</div>
       {Data[currentIndex] && (
         <Card
           src={Data[currentIndex].src}
@@ -36,10 +36,9 @@ const App = () => {
         </button>
         <button
           onClick={() => {
-            // Generate random index, excluding current index and start card (index 0)
             let randomIndex;
             do {
-              randomIndex = Math.floor(Math.random() * (Data.length - 1)) + 1; // Start from index 1 to exclude start card
+              randomIndex = Math.floor(Math.random() * (Data.length - 1)) + 1; 
             } while (randomIndex === currentIndex && Data.length > 2);
             setCurrentIndex(randomIndex);
           }}
