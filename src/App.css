@@ -75,5 +75,4 @@ p {
 .button button:hover {
   transform: translateY(-3px);
   background: #87ceeb;
-  box-shadow: 0 6px 20px rgba(135, 206, 235, 0.6);
 }
